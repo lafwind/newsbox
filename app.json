@@ -1,0 +1,7 @@
+{
+  "name": "News Box",
+  "description": "A simple app",
+  "repository": "https://github.com/lafwind/newsbox",
+  "logo": "/www/favicon.icog",
+  "keywords": ["ionic", "newsbox", "whatever"]
+}
