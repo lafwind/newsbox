@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="LafApp">
   <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,30 +27,69 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
-  <body data-ng-app="starter" data-ng-controller="AppCtrl">
+  <body >
 
-    <ion-pane>
-      <ion-header-bar class="bar-positive full-bar">
-        <h1 class="title">
-          Newsbox
-        </h1>
-        <button class="button" data-ng-click="refresh()">
-          <span class="ion-ios-reload"></span>
-        </button>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-      <div class="tabs tabs-icon-only">
-        <a class="tab-item" data-ng-click="home()">
-          <i class="icon ion-home"></i>
-        </a>
-        <a class="tab-item" data-ng-click="like()">
-          <i class="icon ion-heart"></i>
-        </a>
-        <a class="tab-item" data-ng-click="setting()">
-          <i class="icon ion-gear-a"></i>
-        </a>
-      </div>
-    </ion-pane>
+    <ion-tabs class="tabs-icon-only tabs-positive">
+
+      <ion-tab title="Home"
+        icon-on="ion-ios-home"
+        icon-off="ion-ios-home-outline"
+        data-ng-controller="HomeCtrl"
+        >
+
+        <ion-header-bar class="bar-positive full-bar">
+          <h1 class="title">
+            News Box
+          </h1>
+          <button class="button" data-ng-click="refresh()">
+            <span class="ion-ios-reload"></span>
+          </button>
+
+        </ion-header-bar>
+
+        <ion-content has-tabs="true" on-refresh="onRefresh()">
+
+          <ion-refresher></ion-refresher>
+
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab title="Like"
+        icon-on="icon ion-ios-heart"
+        icon-off="icon ion-ios-heart-outline"
+        data-ng-controller="LikeCtrl"
+        >
+        <header class="bar bar-header bar-positive full-bar">
+          <h1 class="title">Like</h1>
+
+          <button class="button" data-ng-click="refresh()">
+            <span class="ion-ios-reload"></span>
+          </button>
+
+        </header>
+        <ion-content has-header="true">
+          <ion-refresher></ion-refresher>
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab title="Letters"
+        icon-on="icon ion-ios-email"
+        icon-off="icon ion-ios-email-outline"
+        data-ng-controller="LetterCtrl"
+        data-ng-Click="mention()"
+        >
+        <header class="bar bar-header bar-positive full-bar">
+          <h1 class="title">Letters</h1>
+
+          <button class="button" data-ng-click="refresh()">
+            <span class="ion-ios-reload"></span>
+          </button>
+        </header>
+        <ion-content has-header="true">
+          <ion-refresher></ion-refresher>
+        </ion-content>
+      </ion-tab>
+
+    </ion-tabs>
   </body>
 </html>
