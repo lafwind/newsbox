@@ -24,4 +24,16 @@ function AppCtrl($scope, $log) {
   $scope.refresh = function() {
     alert("别逗～小箫歌～");
   }
+
+  $scope.home = function() {
+    alert("还逗~大哥~真没啥~");
+  }
+
+  $scope.like = function() {
+    alert("虽然你这么逗~但我还是喜欢你！");
+  }
+
+  $scope.setting = function() {
+    alert("真的别逗了哦小淘气～嘿嘿~");
+  }
 }
