@@ -113,13 +113,15 @@ function LikeCtrl($scope, $log, $ionicPopup, $ionicTabsDelegate) {
 
 
 function LetterCtrl($scope, $log, $ionicPopup, $ionicTabsDelegate) {
+  $scope.caiege = ""
+  $scope.count = 0
+  $scope.random
+
+
   $scope.refresh = function() {
     var alertPopup = $ionicPopup.alert({
       title: '可爱提示：',
       template: '这是不会动的～别淘气～'
-    });
-    alertPopup.then(function(res) {
-      console.log('Thank you for not eating my delicious ice cream cone');
     });
   }
 
@@ -128,10 +130,19 @@ function LetterCtrl($scope, $log, $ionicPopup, $ionicTabsDelegate) {
       title: '这是啥？',
       template: '这个绝对不可能是彩蛋的！'
     });
-    alertPopup.then(function(res) {
-      console.log('Thank you for not eating my delicious ice cream cone');
-    });
 
     $ionicTabsDelegate.select(index);
+
+    $scope.random = Math.round(Math.random()*1000)
+    console.log($scope.random);
+
+    if ($scope.count < 3 || $scope.random % 5 != 0 ) {
+      $scope.caiege = "caiege"
+      $scope.count += 1
+    } else {
+      $scope.caiege = ""
+      $scope.count += 1
+    }
+    console.log($scope.count);
   }
 }
