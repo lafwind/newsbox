@@ -54,8 +54,6 @@
 
         <ion-content has-tabs="true" on-refresh="onRefresh()">
 
-          <ion-refresher></ion-refresher>
-
         </ion-content>
       </ion-tab>
 
@@ -63,6 +61,7 @@
         icon-on="icon ion-ios-heart"
         icon-off="icon ion-ios-heart-outline"
         data-ng-controller="LikeCtrl"
+        ng-click="pwdPopup(1)"
         >
         <header class="bar bar-header bar-positive full-bar">
           <h1 class="title">Like</h1>
@@ -73,7 +72,6 @@
 
         </header>
         <ion-content has-header="true">
-          <ion-refresher></ion-refresher>
         </ion-content>
       </ion-tab>
 
@@ -81,7 +79,7 @@
         icon-on="icon ion-ios-email"
         icon-off="icon ion-ios-email-outline"
         data-ng-controller="LetterCtrl"
-        data-ng-Click="mention()"
+        data-ng-Click="mention(2)"
         >
         <header class="bar bar-header bar-positive full-bar">
           <h1 class="title">Letters</h1>
@@ -90,8 +88,8 @@
             <span class="ion-ios-reload"></span>
           </button>
         </header>
+
         <ion-content has-header="true">
-          <ion-refresher></ion-refresher>
         </ion-content>
       </ion-tab>
 
