@@ -24,9 +24,9 @@ var App = angular.module('LafApp', ['ionic'])
 //
 // })
 
-App.controller("HomeCtrl", ["$scope", "$log", HomeCtrl]);
-App.controller("LikeCtrl", ["$scope", "$log", LikeCtrl]);
-App.controller("LetterCtrl", ["$scope", "$log", LetterCtrl]);
+App.controller("HomeCtrl", ["$scope", "$log", "$ionicPopup", HomeCtrl]);
+App.controller("LikeCtrl", ["$scope", "$log", "$ionicPopup", LikeCtrl]);
+App.controller("LetterCtrl", ["$scope", "$log", "$ionicPopup", LetterCtrl]);
 
 App.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -41,24 +41,49 @@ App.run(function($ionicPlatform) {
   });
 })
 
-function HomeCtrl($scope, $log) {
+function HomeCtrl($scope, $log, $ionicPopup) {
   $scope.refresh = function() {
-    alert("别逗了～不会动的～小箫歌～");
+    var alertPopup = $ionicPopup.alert({
+      title: 'Don\'t eat that!',
+      template: 'It might taste good'
+    });
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
   }
 }
 
-function LikeCtrl($scope, $log) {
+function LikeCtrl($scope, $log, $ionicPopup) {
   $scope.refresh = function() {
-    alert("别逗了～不会动的～小箫歌～");
+    var alertPopup = $ionicPopup.alert({
+      title: 'Don\'t eat that!',
+      template: 'It might taste good'
+    });
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
   }
 }
 
-function LetterCtrl($scope, $log) {
+
+function LetterCtrl($scope, $log, $ionicPopup) {
   $scope.refresh = function() {
-    alert("别逗了～不会动的～小箫歌～");
+    var alertPopup = $ionicPopup.alert({
+      title: 'Don\'t eat that!',
+      template: 'It might taste good'
+    });
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
   }
 
   $scope.mention = function() {
-    alert("有彩蛋！");
+    var alertPopup = $ionicPopup.alert({
+      title: 'Don\'t eat that!',
+      template: 'It might taste good'
+    });
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
   }
 }
