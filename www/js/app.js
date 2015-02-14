@@ -70,6 +70,7 @@ function LikeCtrl($scope, $log, $ionicPopup, $ionicTabsDelegate) {
   $scope.pwdPopup = function(index) {
     $ionicTabsDelegate.select(index);
     $scope.data = {}
+    $scope.img_url = ""
 
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
@@ -96,10 +97,10 @@ function LikeCtrl($scope, $log, $ionicPopup, $ionicTabsDelegate) {
     myPopup.then(function(res) {
       console.log('Tapped!', res);
       var pwd = "lafxsong"
-      var img_url = ""
       if (res == pwd) {
-        img_url = "/img/you.png"
+        $scope.img_url = "/img/yes.png"
       } else {
+        $scope.img_url = "/img/no.png"
         var alertPopup = $ionicPopup.alert({
           title: '嘿嘿嘿～',
           template: '猜不出来了吧~'

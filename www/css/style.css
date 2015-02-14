@@ -13,3 +13,8 @@
   margin: 15px 0 10px 0;
   border: 0px;
 }
+
+.photo {
+  width: 100%;
+  padding: 80px 10px;
+}
