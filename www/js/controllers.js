@@ -4,5 +4,5 @@ ctrls.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 });
 
 
-ctrls.controller('NewslistsCtrl', function($scope, $stateParams) {
+ctrls.controller('NewslistCtrl', function($scope, $stateParams) {
 });

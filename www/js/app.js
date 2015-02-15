@@ -30,16 +30,25 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     controller: 'AppCtrl'
   })
 
-  .state('app.playlists', {
-    url: "/newslists",
+  .state('app.newslist', {
+    url: "/newslist",
     views: {
       'menuContent': {
-        templateUrl: "templates/newslists.html",
-        controller: 'NewslistsCtrl'
+        templateUrl: "templates/newslist.html",
+        controller: 'NewslistCtrl'
+      }
+    }
+  })
+
+  .state('app.addlist', {
+    url: "/addlist",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/addlist.html",
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/newslists');
+  $urlRouterProvider.otherwise('/app/newslist');
 });
