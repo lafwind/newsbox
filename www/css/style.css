@@ -4,6 +4,10 @@
   height: 60px !important;
 }
 
+.adjust {
+  top: 60px;
+}
+
 .bar-positive .title {
   margin: 15px 10px 0 10px;
 }
